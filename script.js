@@ -83,19 +83,19 @@ scene("game", ()=>{
                 column = 2;
             }
             else if(x > 465 && x < 555) {
-                circX = 502;
+                circX = 504;
                 column = 3;
             }
             else if(x > 555 && x < 635) {
-                circX = 583;
+                circX = 585;
                 column = 4;
             }
             else if(x > 635 && x < 715) {
-                circX = 662;
+                circX = 665;
                 column = 5;
             }
             else if(x > 715 && x < 805) {
-                circX = 740;
+                circX = 744;
                 column = 6;
             }
             if(circX > -1 && matrix[0][column] == 0) {
