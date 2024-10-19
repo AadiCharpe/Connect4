@@ -37,6 +37,7 @@ scene("title", ()=>{
 
 scene("game", ()=>{
     loadSprite("grid", "ovfs88vhtmu91-removebg-preview.png");
+    loadSound("fall", "dice-95077.mp3");
     let turn = true;
     let timer = 0;
     let matrix = [[0, 0, 0, 0, 0, 0, 0],
@@ -46,6 +47,7 @@ scene("game", ()=>{
                   [0, 0, 0, 0, 0, 0, 0],
                   [0, 0, 0, 0, 0, 0, 0]];
     let winner = 0;
+    let e = true;
     add([
         rect(width(), height()),
         color(200, 200, 200)
@@ -99,6 +101,7 @@ scene("game", ()=>{
                 column = 6;
             }
             if(circX > -1 && matrix[0][column] == 0) {
+                e = false;
                 add([
                     circle(40),
                     pos(circX, 0),
@@ -151,6 +154,8 @@ scene("game", ()=>{
     })
     onUpdate(()=>{
         timer++;
+        if(timer == 40 && e == false)
+            play("fall");
     })
 })
 
